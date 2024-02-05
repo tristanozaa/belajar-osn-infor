@@ -7,15 +7,15 @@ https://tlx.toki.id/courses/basic/chapters/10/problems/C
 using namespace std;
 
 int reverse(int x) {
-    int temp = x;
-    int ret  = 0;
+  int temp = x;
+  int ret = 0;
 
-    while (temp > 0) {
-        ret  = (ret * 10) + (temp % 10);
-        temp = temp / 10;
-    }
+  while (temp > 0) {
+    ret = (ret * 10) + (temp % 10);
+    temp = temp / 10;
+  }
 
-    return ret;
+  return ret;
 }
 
 /*
@@ -24,8 +24,8 @@ https://www.youtube.com/watch?v=8uI6hKp3jYs&t=467s
 */
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-    cout << reverse(reverse(a)+reverse(b));
-    return 0;
+  int a, b;
+  cin >> a >> b;
+  cout << reverse(reverse(a) + reverse(b));
+  return 0;
 }
