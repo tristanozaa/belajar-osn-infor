@@ -17,21 +17,30 @@ int main() {
     
     int t;
     cin >> t;
-    char p,q;
-    int x,y,temp;
-    for (int i = 0; i < t; i++)
-    {
-        cin >> p >> x >> q >> y;
-        temp = p[x]
-        p[x] = q[y]
-        q[y] = temp
+    char P, x, Q, y;
+    for (int i = 0; i < t; i++) {
+        cin >> P >> x >> Q >> y;
+      if (P == 'A' && Q == 'A' ) {
+      }
+      if (P == 'A' && Q == 'B' ) {
+      }
+      if (P == 'B' && Q == 'A' ) {
+      }
+      if (P == 'B' && Q == 'B' ) {
+      }
     }
     
-    /*
-    temp = p[x]
-    p[x] = q[y]
-    q[y] = temp
-    */
+    for (int i = 0; i < n; i++)
+    {
+        cout << A[i];
+    }
+    cout << "\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << B[i];
+    }
+   
+   
 
     return 0;
 }
