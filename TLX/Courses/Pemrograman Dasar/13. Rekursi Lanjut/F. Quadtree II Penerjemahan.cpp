@@ -1,60 +1,77 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, r, c, rr, cc;
-vector<string> qt;
-bool arr[128][128];
+int matrix[128][128];
+int r, c, n;
+string code[128 * 128];
 
-void rekursi(int indeks, int kedalaman, int row, int col, int k) {
-  if (kedalaman == qt[indeks].length()) {
-    for (int x = row; x < row + k; x++) {
-      for (int y = col; y < col + k; y++) {
-        arr[x][y] = true;
+bool ispowertwo(int n) {
+  if (n % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void changeto1(int r, int c, int size, string kode) {
+  if (kode.length() == 0) {
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        matrix[i][j] = 1;
       }
     }
-  } else {
-    if (qt[indeks][kedalaman] == '0') {
-      rekursi(indeks, kedalaman + 1, row, col, k / 2);
-    }
-    if (qt[indeks][kedalaman] == '1') {
-      rekursi(indeks, kedalaman + 1, row, col + (k / 2), k / 2);
-    }
-    if (qt[indeks][kedalaman] == '2') {
-      rekursi(indeks, kedalaman + 1, row + (k / 2), col, k / 2);
-    }
-    if (qt[indeks][kedalaman] == '3') {
-      rekursi(indeks, kedalaman + 1, row + (k / 2), col + (k / 2), k / 2);
+    return;
+  } else if (kode.length() == 1) {
+    if (kode == "0") {
+      for (int i = r; i < (r + (size >> 1)); i++) {
+        for (int j = c; j < (c + (size >> 1)); j++) {
+          matrix[i][j] = 1;
+        }
+      }
+    } else if (kode == "1") {
+      for (int i = r; i < (r + (size >> 1)); i++) {
+      }
     }
   }
 }
 
 void solve() {
   cin >> n;
-  qt.resize(n);
   for (int i = 0; i < n; i++) {
-    cin >> qt[i];
+    cin >> code[i];
   }
   cin >> r >> c;
-  rr = r;
-  cc = c;
-  int maxRc = max(r, c);
-  int pow2 = 1;
-  while (pow2 < maxRc) {
-    pow2 *= 2;
-  }
-  for (int i = 0; i < 128; i++) {
-    for (int j = 0; j < 128; j++) {
-      arr[i][j] = false;
+  int rtemp = r, ctemp = c;
+  if (!(ispowertwo(r) && ispowertwo(c))) {
+    while (!ispowertwo(rtemp)) {
+      rtemp++;
+    }
+    while (!ispowertwo(ctemp)) {
+      ctemp++;
     }
   }
-  for (int i = 0; i < n; i++) {
-    rekursi(i, 1, rr, cc, pow2);
+  rtemp = (ctemp > rtemp) ? ctemp : rtemp;
+  ctemp = rtemp;
+  for (int i = 0; i < rtemp; i++) {
+    for (int j = 0; j < ctemp; j++) {
+      matrix[i][j];
+    }
+  }
+  if (n != 0) {
+    for (int i = 0; i < n; i++) {
+      code[i].erase(code[i].begin());
+      changeto1(0, 0, rtemp, code[i]);
+    }
   }
   for (int i = 0; i < r; i++) {
     for (int j = 0; j < c; j++) {
-      cout << arr[i][j] << ' ';
+      cout << matrix[i][j];
+      if (j == c - 1) {
+        cout << '\n';
+      } else {
+        cout << ' ';
+      }
     }
-    cout << '\n';
   }
 }
 
