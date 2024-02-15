@@ -30,7 +30,34 @@ void changeto1(int r, int c, int size, string kode) {
       }
     } else if (kode == "1") {
       for (int i = r; i < (r + (size >> 1)); i++) {
+        for (int j = c + (size >> 1); j < (c + size); j++) {
+          matrix[i][j] = 1;
+        }
       }
+    } else if (kode == "2") {
+      for (int i = r + (size >> 1); i < (r + size); i++) {
+        for (int j = c; j < (c + (size >> 1)); j++) {
+          matrix[i][j] = 1;
+        }
+      }
+    } else {
+      for (int i = r + (size >> 1); i < (r + size); i++) {
+        for (int j = c + (size >> 1); j < (c + size); j++) {
+          matrix[i][j] = 1;
+        }
+      }
+    }
+  } else {
+    char pos = kode[0];
+    kode.erase(kode.begin());
+    if (pos == '0') {
+      changeto1(r, c, (size >> 1), kode);
+    } else if (pos == '1') {
+      changeto1(r, c + (size >> 1), (size >> 1), kode);
+    } else if (pos == '2') {
+      changeto1(r + (size >> 1), c, (size >> 1), kode);
+    } else if (pos == '3') {
+      changeto1(r + (size >> 1), c + (size >> 1), (size >> 1), kode);
     }
   }
 }
