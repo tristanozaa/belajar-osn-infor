@@ -6,7 +6,7 @@ int r, c, n;
 string code[128 * 128];
 
 bool ispowertwo(int n) {
-  if (n % 2 == 0) {
+  if (n == 2 || n == 4 || n == 8 || n == 16 || n == 32 || n == 64 || n == 128) {
     return true;
   } else {
     return false;
