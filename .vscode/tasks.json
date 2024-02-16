@@ -9,7 +9,14 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                "-Wconversion",
+                "-Wfloat-equal",
+                "-Wduplicated-cond",
+                "-Wlogical-op"
             ],
             "options": {
                 "cwd": "${fileDirname}"
