@@ -1,4 +1,4 @@
-//
+// https://tlx.toki.id/courses/competitive/chapters/01/problems/D
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,29 +7,26 @@ using namespace std;
   cerr << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
 #endif
 
-int r, c;
-vector<vector<bool>> v;
-string s;
-
-// coba pakai vector of strings
+string a, b;
+int i = 0, j = 0;
 
 void solve() {
-  cin >> r >> c;
-  v.resize(r, vector<bool>(c));
-  for (int i = 0; i < r; i++) {
-    cin >> s;
-    for (int j = 0; j < c; j++) {
-      if (s[j] == 0) {
-        v[i][j] = 0;
-      } else {
-        v[i][j] = 1;
+  cin >> a;
+  cin >> b;
+  if (a.length() == b.length() + 1) {
+    while (i < a.length() && j <= b.length()) {
+      if (a[i] == b[j]) {
+        j++;
       }
+      i++;
     }
-  }
-  for (int i = 0; i < r; i++) {
-    for (int j = 0; j < c; j++) {
-      dbg(v[i][j]);
+    if (i == j + 1) {
+      cout << "Tentu saja bisa!";
+    } else {
+      cout << "Wah, tidak bisa :(";
     }
+  } else {
+    cout << "Wah, tidak bisa :(";
   }
 }
 

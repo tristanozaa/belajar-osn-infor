@@ -1,4 +1,4 @@
-//
+// https://tlx.toki.id/courses/competitive/chapters/03/problems/A
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,30 +7,22 @@ using namespace std;
   cerr << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
 #endif
 
-int r, c;
-vector<vector<bool>> v;
-string s;
-
-// coba pakai vector of strings
+int n, x, terkecil = INT_MAX, ans;
 
 void solve() {
-  cin >> r >> c;
-  v.resize(r, vector<bool>(c));
-  for (int i = 0; i < r; i++) {
-    cin >> s;
-    for (int j = 0; j < c; j++) {
-      if (s[j] == 0) {
-        v[i][j] = 0;
-      } else {
-        v[i][j] = 1;
-      }
+  cin >> n >> x;
+  int kupon[n];
+  for (int i = 0; i < n; i++) {
+    cin >> kupon[i];
+    if (abs(kupon[i] - x) < terkecil) {
+      terkecil = abs(kupon[i] - x);
+      ans = kupon[i];
+    }
+    if (abs(kupon[i] - x) == terkecil) {
+      ans = min(kupon[i], ans);
     }
   }
-  for (int i = 0; i < r; i++) {
-    for (int j = 0; j < c; j++) {
-      dbg(v[i][j]);
-    }
-  }
+  cout << ans;
 }
 
 int main() {

@@ -1,36 +1,21 @@
-//
+// https://tlx.toki.id/courses/competitive/chapters/02/problems/A/
 #include <bits/stdc++.h>
 using namespace std;
+
+using ll = long long;
 
 #ifndef ONLINE_JUDGE
 #define dbg(v)                                                                 \
   cerr << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
 #endif
 
-int r, c;
-vector<vector<bool>> v;
-string s;
-
-// coba pakai vector of strings
-
 void solve() {
-  cin >> r >> c;
-  v.resize(r, vector<bool>(c));
-  for (int i = 0; i < r; i++) {
-    cin >> s;
-    for (int j = 0; j < c; j++) {
-      if (s[j] == 0) {
-        v[i][j] = 0;
-      } else {
-        v[i][j] = 1;
-      }
-    }
-  }
-  for (int i = 0; i < r; i++) {
-    for (int j = 0; j < c; j++) {
-      dbg(v[i][j]);
-    }
-  }
+  ll a, b, c, d, e, f, h;
+  cin >> a >> b >> c >> d;
+  f = b * d / gcd(b, d);
+  e = f / b * a + f / d * c;
+  h = gcd(e, f);
+  cout << e / h << " " << f / h;
 }
 
 int main() {
