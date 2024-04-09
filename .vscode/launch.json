@@ -10,7 +10,7 @@
       "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": false,
-      "preLaunchTask": "compile c+pp"
+      "preLaunchTask": "compile cpp"
     }
   ],
   "version": "2.0.0"
