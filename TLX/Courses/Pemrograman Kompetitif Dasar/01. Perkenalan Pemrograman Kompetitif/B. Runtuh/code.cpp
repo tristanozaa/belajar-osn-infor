@@ -8,28 +8,21 @@ using namespace std;
 #endif
 
 int r, c;
-vector<vector<bool>> v;
-string s;
-
-// coba pakai vector of strings
 
 void solve() {
   cin >> r >> c;
-  v.resize(r, vector<bool>(c));
+  char tetris[r][c];
+  string input[r];
   for (int i = 0; i < r; i++) {
-    cin >> s;
-    for (int j = 0; j < c; j++) {
-      if (s[j] == 0) {
-        v[i][j] = 0;
-      } else {
-        v[i][j] = 1;
-      }
-    }
+    cin >> input[i];
   }
+
   for (int i = 0; i < r; i++) {
     for (int j = 0; j < c; j++) {
-      dbg(v[i][j]);
+      tetris[i][j] = input[i][j];
+      cout << tetris[i][j];
     }
+    cout << "\n";
   }
 }
 
