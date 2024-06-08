@@ -18,9 +18,9 @@ kalo kita ubah ke integer maka hasilnya akan menjadi representasi ascii dari cha
 
 lalu setelah kupikir sejenak, ternyata pengubahan dari string menjadi bool itu mungkin jika kita menggunakan percabangan, misal
 
-'''
+'''cpp
 if (input[i][j] == '1') {tetris[i][j] = true;}
 else {tetris[i][j] = false}
-'''cpp
+'''
 
 sedikit catatan, kalo char pakenya petik satu ('), kalo string pake petik dua (")
