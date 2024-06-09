@@ -20,7 +20,11 @@ lalu setelah kupikir sejenak, ternyata pengubahan dari string menjadi bool itu m
 
 ```cpp
 if (input[i][j] == '1') {tetris[i][j] = true;}
-else {tetris[i][j] = false}
+else {tetris[i][j] = false;}
 ```
 
 sedikit catatan, kalo char pakenya petik satu ('), kalo string pake petik dua (")
+
+jangan sampek salah variabel loop sama variabel limiter loop
+
+### perhatikan variabel jika berususan dengan nested loop
