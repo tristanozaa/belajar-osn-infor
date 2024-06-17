@@ -57,7 +57,7 @@ tcT > int upb(V<T> &a, const T &b) { return int(ub(all(a), b) - bg(a)); }
 
 #ifndef ONLINE_JUDGE
 #define dbg(v)                                                                 \
-  cout << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
+  cerr << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << "\n";
 #endif
 
 void solve() {}
